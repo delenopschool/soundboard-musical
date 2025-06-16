@@ -6,19 +6,60 @@
     .container {
         background-color: black;
         color: white;
-        border: 3px #6B01FF;
-        border-radius: 7px;
-        box-shadow: 0px 0px 0px 5px #0ff;
+        border: 3px solid #0ff;
+        border-radius: 25px;
         width: 35%;
-        height: 20%;
-        margin-top: 70px;
-        margin-left: 50%;
-        float: center;
+        height: 40%;
+        margin-top: 30%;
+        margin-left: 32.5%;
+        padding: 10px;
+        vertical-align: center;
     }
     body {
         background-color: #010C3C;
         text-align: center;
     }
+    .container {
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.01);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -10%;
+    left: -10%;
+    right: 0;
+    z-index: -1;
+    height: 120%;
+    width: 120%;
+    transform: scale(0.9) translateZ(0);
+    filter: blur(15px);
+    background: linear-gradient(
+      to left,
+      #e81416,
+      #ffa500,
+      #faeb36,
+      #79c314,
+      #487de7,
+      #4b369d,
+      #70369d,
+      #e4428d,
+      #ff5770
+    );
+    background-size: 200% 200%;
+    animation: animateGlow 1.25s linear infinite;
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 </style>
 <body onload="myFuntion()">
     <div class="container">
